@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WM Visuals Works | Will Muñoz - Portafolio Profesional</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#FAF9F6', // Off-white/cream background from design
+                            blue: '#1A64FF', // Cobalt blue from camera framing brackets
+                            black: '#000000',
+                            cardBg: '#FFFFFF',
+                            textDark: '#121212',
+                            textMuted: '#555555'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Poppins', 'Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            background-color: #FAF9F6;
+            color: #121212;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* Custom elevation shadow for minimalist cards */
+        .card-shadow {
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
+        }
+
+        .card-hover-shadow {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover-shadow:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -15px rgba(26, 100, 255, 0.12), 0 8px 20px -4px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FAF9F6;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #CBD5E1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #1A64FF;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-brand-blue selection:text-white">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-40 bg-[#FAF9F6]/90 backdrop-blur-md border-b border-stone-200/60 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-24">
+                
+                <!-- SVG Brand Logo based on WM Visuals Works Graphics -->
+                <a href="#inicio" class="flex items-center group py-2" title="WM Visuals Works">
+                    <svg class="h-12 w-auto transition-transform duration-300 group-hover:scale-105" viewBox="0 0 260 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Top-Left Bracket -->
+                        <path d="M 10,40 L 10,10 L 40,10" stroke="#1A64FF" stroke-width="8" stroke-linecap="square"/>
+                        <!-- Top-Right Bracket -->
+                        <path d="M 220,10 L 250,10 L 250,40" stroke="#1A64FF" stroke-width="8" stroke-linecap="square"/>
+                        <!-- Bottom-Left Bracket -->
+                        <path d="M 10,90 L 10,120 L 40,120" stroke="#1A64FF" stroke-width="8" stroke-linecap="square"/>
+                        <!-- Bottom-Right Bracket -->
+                        <path d="M 220,120 L 250,120 L 250,90" stroke="#1A64FF" stroke-width="8" stroke-linecap="square"/>
+                        
+                        <!-- Main WM Bold Text -->
+                        <text x="130" y="80" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="68" fill="#000000" letter-spacing="-2">WM</text>
+                        
+                        <!-- VISUALS WORKS Text -->
+                        <text x="130" y="112" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="14" fill="#000000" letter-spacing="3.5">VISUALS WORKS</text>
+                    </svg>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+              <nav class="hidden md:flex items-center space-x-10 text-xs tracking-widest font-bold uppercase text-stone-700">
+                    <a href="#inicio" class="hover:text-brand-blue border-b-2 border-brand-blue pb-1 transition-all">Inicio</a>
+                    <a href="#noticias" class="hover:text-brand-blue border-b-2 border-transparent hover:border-brand-blue pb-1 transition-all">Noticias</a>
+                    <a href="#acerca-de" class="hover:text-brand-blue border-b-2 border-transparent hover:border-brand-blue pb-1 transition-all">Acerca de</a>
+                    <a href="#contacto" class="hover:text-brand-blue border-b-2 border-transparent hover:border-brand-blue pb-1 transition-all">Contacto</a>
+              </nav>
+
+                <!-- Right Actions & Primary CTA Button -->
+                <div class="hidden sm:flex items-center gap-5">
+                    <!-- Notification Bell Counter -->
+                    <button class="relative p-2 text-stone-700 hover:text-brand-blue transition-colors" title="Notificaciones">
+                        <i class="fa-regular fa-bell text-xl"></i>
+                        <span class="absolute top-1 right-1 bg-red-600 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">2</span>
+                    </button>
+
+                    <!-- Avatar Pill -->
+                    <div class="flex items-center gap-1.5 p-1 pl-1.5 pr-2 rounded-full border border-stone-300 bg-white shadow-sm">
+                      <img src= ../../Desktop/1x/RPM.png Muñoz" class="w-7 h-7 rounded-full object-cover">
+                        <i class="fa-solid fa-chevron-down text-stone-400 text-xs"></i>
+                    </div>
+
+                    <!-- "Haz tu pregunta" Button (Exact black pill design) -->
+                    <button onclick="openQuestionModal()" class="bg-black hover:bg-stone-800 text-white text-xs font-semibold px-6 py-3 rounded-full shadow-md transition-all hover:scale-105 active:scale-95 flex items-center gap-2">
+                        <span>Haz tu pregunta</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Toggle Button -->
+                <button id="mobileMenuBtn" class="md:hidden text-stone-800 p-2 rounded-lg hover:bg-stone-200/50" aria-label="Abrir Menú">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-stone-200 px-6 py-6 space-y-4 shadow-xl">
+            <a href="#inicio" class="mobile-nav-link block text-sm font-bold tracking-wider uppercase text-stone-800 hover:text-brand-blue">Inicio</a>
+            <a href="#noticias" class="mobile-nav-link block text-sm font-bold tracking-wider uppercase text-stone-800 hover:text-brand-blue">Noticias</a>
+            <a href="#acerca-de" class="mobile-nav-link block text-sm font-bold tracking-wider uppercase text-stone-800 hover:text-brand-blue">Acerca de</a>
+            <a href="#contacto" class="mobile-nav-link block text-sm font-bold tracking-wider uppercase text-stone-800 hover:text-brand-blue">Contacto</a>
+            <div class="pt-4 border-t border-stone-100 flex flex-col gap-3">
+                <button onclick="openQuestionModal()" class="w-full bg-black text-white text-sm font-semibold py-3 rounded-full text-center">
+                    Haz tu pregunta
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="pt-16 pb-20 md:pt-24 md:pb-28 max-w-5xl mx-auto px-4 sm:px-6 text-center">
+        <!-- Title matching Wix interface exact text -->
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-brand-textDark mb-8 leading-tight">
+            ¿Qué es MW?
+        </h1>
+        
+        <!-- Subtitle description from screenshot -->
+        <p class="text-stone-600 text-base sm:text-lg md:text-xl font-normal max-w-3xl mx-auto leading-relaxed mb-12">
+            Más que un simple espacio para publicar trabajos académicos, WM Visuals Works representa mi evolución como comunicador multimedia, mostrando cómo cada proyecto contribuye a desarrollar una identidad creativa y una forma propia de comunicar mensajes e ideas.
+        </p>
+
+        <!-- Dynamic Brand Camera Viewport Accent Line -->
+        <div class="flex items-center justify-center gap-2 opacity-80">
+            <span class="w-12 h-[2px] bg-brand-blue"></span>
+            <i class="fa-solid fa-camera text-brand-blue text-xs"></i>
+            <span class="w-12 h-[2px] bg-brand-blue"></span>
+        </div>
+    </section>
+
+    <!-- MAIN CATEGORY CARDS SECTION -->
+<section class="pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <!-- Card 1: Fotografía -->
+            <div class="bg-white rounded-3xl p-8 sm:p-10 card-shadow card-hover-shadow border border-stone-100 flex flex-col justify-between min-h-[380px] group">
+                <div class="space-y-6">
+                    <div class="w-12 h-12 rounded-2xl bg-stone-50 border border-stone-200/80 flex items-center justify-center text-stone-800 group-hover:bg-brand-blue group-hover:text-white group-hover:border-brand-blue transition-colors">
+                        <i class="fa-solid fa-camera-retro text-xl"></i>
+                    </div>
+                  <div>
+                    <h2 class="text-2xl font-semibold text-brand-textDark mb-3">Fotografía</h2>
+                      <p class="text-stone-500 text-sm leading-relaxed">
+                    Capturo momentos y detalles a través de una mirada creativa, explorando la composición, la iluminación y el color para transformar escenas cotidianas en imágenes visualmente atractivas y con identidad propia. </p>
+                    </div>
+                </div>
+
+                <div class="pt-6">
+                    <button onclick="openCategoryDetails('Fotografía', 'Proyectos editoriales, dirección de arte, retratos de estudio e iluminación natural desarrollados por Will Muñoz.', ['SOMBRAS: Otoño de Impacto', 'Captura de Campo & Entorno', 'Serie Botánica & Retrato'])" class="inline-flex items-center text-xs font-bold uppercase tracking-wider text-black group-hover:text-brand-blue transition-colors">
+                        Explorar área <i class="fa-solid fa-arrow-right-long ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 2: Noticias -->
+            <div class="bg-white rounded-3xl p-8 sm:p-10 card-shadow card-hover-shadow border border-stone-100 flex flex-col justify-between min-h-[380px] group">
+                <div class="space-y-6">
+                    <div class="w-12 h-12 rounded-2xl bg-stone-50 border border-stone-200/80 flex items-center justify-center text-stone-800 group-hover:bg-brand-blue group-hover:text-white group-hover:border-brand-blue transition-colors">
+                        <i class="fa-regular fa-newspaper text-xl"></i>
+                    </div>
+                  <div>
+                    <h2 class="text-2xl font-semibold text-brand-textDark mb-3">Noticias</h2>
+                      <p class="text-stone-500 text-sm leading-relaxed">
+                        Transformo ideas e información en contenidos claros, relevantes y atractivos, integrando la redacción, la narrativa visual y los recursos digitales para comunicar mensajes que conecten con diferentes audiencia
+                    </p>
+                    </div>
+                </div>
+
+                <div class="pt-6">
+                    <button onclick="openCategoryDetails('Noticias', 'Novedades sobre talleres, exposiciones académicas y publicaciones multimedia sobre diseño gráfico.', ['Lanzamiento de Taller de Isométricos', 'Publicación en Revista Editorial', 'Actualización de Portafolio 2026'])" class="inline-flex items-center text-xs font-bold uppercase tracking-wider text-black group-hover:text-brand-blue transition-colors">
+                        Ver novedades <i class="fa-solid fa-arrow-right-long ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 3: Diseño & Docencia -->
+            <div class="bg-white rounded-3xl p-8 sm:p-10 card-shadow card-hover-shadow border border-stone-100 flex flex-col justify-between min-h-[380px] group">
+                <div class="space-y-6">
+                    <div class="w-12 h-12 rounded-2xl bg-stone-50 border border-stone-200/80 flex items-center justify-center text-stone-800 group-hover:bg-brand-blue group-hover:text-white group-hover:border-brand-blue transition-colors">
+                        <i class="fa-solid fa-chalkboard-user text-xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-semibold text-brand-textDark mb-3">Diseño gráfico</h2>
+                        <p class="text-stone-500 text-sm leading-relaxed">
+                          Desarrollo propuestas gráficas que combinan creatividad, planificación y funcionalidad. Desde la identidad visual y el diseño editorial hasta la ilustración y el dibujo técnico, busco convertir conceptos en soluciones visuales coherentes y significativas.
+                      </p>
+                  </div>
+                </div>
+
+                <div class="pt-6">
+                    <button onclick="openCategoryDetails('Docencia & Taller', 'Metodologías de enseñanza en diseño gráfico, talleres prácticos de falso vitral, mosaicos e isométricos.', ['Taller Práctico Falso Vitral', 'Guía de Isométricos & Proyección', 'Maquetación Editorial Avanzada'])" class="inline-flex items-center text-xs font-bold uppercase tracking-wider text-black group-hover:text-brand-blue transition-colors">
+                        Ver <i class="fa-solid fa-arrow-right-long ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 4: Producción Multimedia -->
+            <div class="bg-white rounded-3xl p-8 sm:p-10 card-shadow card-hover-shadow border border-stone-100 flex flex-col justify-between min-h-[380px] group">
+                <div class="space-y-6">
+                    <div class="w-12 h-12 rounded-2xl bg-stone-50 border border-stone-200/80 flex items-center justify-center text-stone-800 group-hover:bg-brand-blue group-hover:text-white group-hover:border-brand-blue transition-colors">
+                        <i class="fa-solid fa-layer-group text-xl"></i>
+                    </div>
+                  <div>
+                    <h2 class="text-2xl font-semibold text-brand-textDark mb-3">Multimedia</h2>
+                      <p class="text-stone-500 text-sm leading-relaxed">
+                        Integro fotografía, video, animación y diseño digital para crear experiencias visuales dinámicas. Trabajo con herramientas como Adobe Premiere Pro, Photoshop e InDesign, explorando nuevas formas de contar historias y comunicar a través de distintos medios.
+                    </p>
+                    </div>
+                </div>
+
+                <div class="pt-6">
+                    <button onclick="openCategoryDetails('Producción Multimedia', 'Proyectos de branding, composición digital y edición audiovisual orientada a la comunicación masiva.', ['Revista i-D Style Layout', 'Serie Tipográfica I Love You', 'Prototipado Transmedia UX'])" class="inline-flex items-center text-xs font-bold uppercase tracking-wider text-black group-hover:text-brand-blue transition-colors">
+                        Ver proyectos <i class="fa-solid fa-arrow-right-long ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION ACERCA DE & MOODBOARD INTEGRATION -->
+<section id="acerca-de" class="py-20 bg-white border-y border-stone-200/70">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Brand Visual Box -->
+                <div class="lg:col-span-5">
+                    <img src="../WhatsApp Image 2026-10-18 at 2.37.11 PM.jpeg" width="898" height="1280" alt=""/>
+                    <div class="bg-[#FAF9F6] p-8 sm:p-10 rounded-3xl border border-stone-200 space-y-6 relative overflow-hidden">
+                        
+                        <!-- Mini Camera Framing Watermark -->
+                        <div class="absolute -bottom-10 -right-10 opacity-5 text-black">
+                            <i class="fa-solid fa-camera text-[200px]"></i>
+                      </div>
+
+                        <!-- Header Branding Badge -->
+                      <div class="flex items-center gap-3">
+                            <div class="w-3 h-3 rounded-full bg-brand-blue animate-pulse"></div>
+                            <span class="text-xs font-bold tracking-widest text-stone-500 uppercase">Perfil del Creador</span>
+                      </div>
+
+                      <h3 class="text-3xl font-extrabold text-brand-textDark">
+                        Wilfredo Muñoz
+                  </h3>
+                        <p class="text-brand-blue font-semibold text-sm">
+                          Técnico Multimedia
+                      </p>
+
+                        <p class="text-stone-600 text-sm leading-relaxed">
+                            Especializado en transformar conceptos en experiencias visuales memorables. Con un enfoque holístico en la comunicación, combino la fotografía editorial, la diagramación en InDesign y la docencia para impulsar ideas con propósito.
+                        </p>
+
+                        <div class="pt-2 grid grid-cols-2 gap-3 text-xs font-semibold">
+                            <div class="p-3 bg-white rounded-xl border border-stone-200 text-stone-700 flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-blue"></i>
+                                <span>Edición Photoshop</span>
+                            </div>
+                          <div class="p-3 bg-white rounded-xl border border-stone-200 text-stone-700 flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-blue"></i>
+                                <span>Diseño InDesign</span>
+                          </div>
+                            <div class="p-3 bg-white rounded-xl border border-stone-200 text-stone-700 flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-blue"></i>
+                                <span>Medios de comunicación&nbsp;</span>
+                            </div>
+                            <div class="p-3 bg-white rounded-xl border border-stone-200 text-stone-700 flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-blue"></i>
+                                <span>Fotografía Studio</span>
+                            </div>
+                        </div>
+                  </div>
+              </div>
+
+                <!-- Right Narrative Content -->
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="inline-block px-3.5 py-1.5 rounded-full bg-stone-100 text-brand-blue text-xs font-bold uppercase tracking-wider">
+                        Filosofía de Trabajo
+                    </span>
+
+                    <h2 class="text-3xl sm:text-4xl font-bold text-brand-textDark leading-tight">
+                      Evolución continua a través de la comunicación visual
+                  </h2>
+
+                    <p class="text-stone-600 leading-relaxed text-base">
+                        WM Visuals Works nace como un laboratorio de experimentación visual e investigación. En cada proyecto abordo los desafíos técnicos y conceptuales desde el equilibrio entre la estética contemporánea y la funcionalidad narrativa.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
+                        <div class="p-6 rounded-2xl bg-[#FAF9F6] border border-stone-200">
+                            <i class="fa-solid fa-compass text-brand-blue text-2xl mb-3"></i>
+                            <h4 class="font-bold text-base mb-1">Enfoque Proyectual</h4>
+                            <p class="text-stone-500 text-xs leading-relaxed">Estructuración clara de la información visual con rigor reticular y tipográfico.</p>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-[#FAF9F6] border border-stone-200">
+                            <i class="fa-solid fa-graduation-cap text-brand-blue text-2xl mb-3"></i>
+                            <h4 class="font-bold text-base mb-1">Resultados con excelencia</h4>
+                            <p class="text-stone-500 text-xs leading-relaxed">Capacitación efectiva en herramientas multimedia y talleres interactivos.</p>
+                      </div>
+                    </div>
+              </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- NOTICIAS / GALERÍA DESTACADA -->
+    <section id="noticias" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 mb-12">
+            <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-blue">Publicaciones Recientes</span>
+                <h2 class="text-3xl font-bold text-brand-textDark mt-1">Destacados del Portafolio</h2>
+            </div>
+            <a href="#contacto" class="text-xs font-bold uppercase tracking-wider text-black hover:text-brand-blue transition-colors flex items-center gap-2">
+                <span>Ver todas las publicaciones</span>
+                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Article 1 -->
+            <article class="bg-white rounded-3xl overflow-hidden border border-stone-200 card-shadow hover:shadow-xl transition-all flex flex-col justify-between">
+                <div>
+                    <img src="../FOTOGRAFÍAS DIPLOMADO/1.png" width="2656" height="3984" alt=""/>
+                    <div class="h-52 overflow-hidden relative"> <span class="absolute top-4 left-4 bg-black text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Fotografía</span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <span class="text-xs text-stone-400 font-medium">Octubre 2026</span>
+                        <h3 class="text-lg font-bold text-stone-900">SOMBRAS: Dirección de Arte Editorial</h3>
+                        <p class="text-stone-500 text-xs line-clamp-3 leading-relaxed">Exploración de retratos de moda utilizando luz natural dirigida e integración tipográfica en InDesign.</p>
+                    </div>
+              </div>
+                <div class="p-6 pt-0">
+                    <button onclick="openArticleModal('SOMBRAS: Dirección de Arte Editorial', 'Fotografía & Maquetación', 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80', 'Este proyecto explora la intersección entre la iluminación natural intensa y la estructuración editorial. Desarrollado como portada conceptual, combina retoque de piel profesional en Photoshop y maquetación de titulares en Adobe InDesign.')" class="text-xs font-bold text-brand-blue hover:underline">Leer artículo completo →</button>
+                </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="bg-white rounded-3xl overflow-hidden border border-stone-200 card-shadow hover:shadow-xl transition-all flex flex-col justify-between">
+                <div>
+                    <div class="h-52 overflow-hidden relative"> <img src="../../Pictures/Screenshots/Captura de pantalla 2026-10-04 213308.png" width="1917" height="1078" alt=""/><span class="absolute top-4 left-4 bg-brand-blue text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">MULTIMEDIA</span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <span class="text-xs text-stone-400 font-medium">Septiembre 2026</span>
+                        <h3 class="text-lg font-bold text-stone-900">Edición de audio para piezas gráficas</h3>
+                        <p class="text-stone-500 text-xs line-clamp-3 leading-relaxed">Registro del taller de audios  aplicadas al diseño con enfoque a la comunicación.</p>
+                  </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <button onclick="openArticleModal('Taller Práctico: Falso Vitral & Mosaicos', 'Capacitación Creativa', 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=80', 'Documentación del taller impartido sobre síntesis de forma, manejo de color y pigmentación artificial simulando vidrieras clásicas para fomentar la creatividad práctica.')" class="text-xs font-bold text-brand-blue hover:underline">Leer artículo completo →</button>
+                </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="bg-white rounded-3xl overflow-hidden border border-stone-200 card-shadow hover:shadow-xl transition-all flex flex-col justify-between">
+                <div>
+                    <div class="h-52 overflow-hidden relative">
+                      <img src="../WhatsApp Image 2026-08-01 at 8.21.54 PM.jpeg" alt="Proyección isométrica" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-stone-800 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">COMUNICACIÓN</span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <span class="text-xs text-stone-400 font-medium">Agosto 2026</span>
+                        <h3 class="text-lg font-bold text-stone-900">Talleres prácticos para personas de la tercera edad.</h3>
+                        <p class="text-stone-500 text-xs line-clamp-3 leading-relaxed">Guía didáctica y ejercicios para el desarrollo de las habilidades manuales en personas de la tercera edad.</p>
+                  </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <button onclick="openArticleModal('Módulo de Dibujo Técnico e Isométricos', 'Guía Pedagógica', 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80', 'Set de guías y láminas de proyección isométrica diseñadas para afianzar la precisión técnica en el trazado de ejes a 30 grados e interpretación espacial.')" class="text-xs font-bold text-brand-blue hover:underline">Leer artículo completo →</button>
+                </div>
+            </article>
+        </div>
+</section>
+
+    <!-- CONTACT / FOOTER SECTION -->
+    <footer id="contacto" class="bg-black text-white pt-20 pb-12 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+            
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Branding info -->
+                <div class="md:col-span-6 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-900 border border-stone-800 text-xs text-stone-300">
+                        <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+                        Disponible para proyectos & conferencias
+                    </div>
+
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">
+                        ¿Tienes una idea en mente? <br>
+                        <span class="text-brand-blue">Trabajemos juntos.</span>
+                    </h2>
+
+                    <p class="text-stone-400 text-sm leading-relaxed max-w-md">
+                        Ponte en contacto para colaboraciones en dirección fotográfica editorial, capacitaciones en diseño o consultoría multimedia.
+                    </p>
+
+                    <div class="flex items-center gap-4 text-stone-400 text-xl pt-2">
+                        <a href="#" class="hover:text-brand-blue transition-colors" title="Behance"><i class="fa-brands fa-behance"></i></a>
+                        <a href="#" class="hover:text-brand-blue transition-colors" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="hover:text-brand-blue transition-colors" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-brand-blue transition-colors" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Right Simple Form -->
+                <div class="md:col-span-6 bg-stone-900/90 border border-stone-800 p-8 rounded-3xl space-y-4">
+                    <h3 class="text-lg font-bold">Enviar un mensaje directo</h3>
+                    <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+                        <div>
+                            <input type="text" required placeholder="Tu Nombre" class="w-full px-4 py-3 rounded-xl bg-stone-950 border border-stone-800 text-white placeholder-stone-500 text-xs focus:outline-none focus:border-brand-blue">
+                        </div>
+                        <div>
+                            <input type="email" required placeholder="Tu Correo Electrónico" class="w-full px-4 py-3 rounded-xl bg-stone-950 border border-stone-800 text-white placeholder-stone-500 text-xs focus:outline-none focus:border-brand-blue">
+                        </div>
+                        <div>
+                            <textarea rows="3" required placeholder="¿En qué puedo ayudarte?" class="w-full px-4 py-3 rounded-xl bg-stone-950 border border-stone-800 text-white placeholder-stone-500 text-xs focus:outline-none focus:border-brand-blue"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-brand-blue hover:bg-blue-600 text-white font-bold text-xs py-3.5 rounded-xl transition-colors">
+                            Enviar Mensaje <i class="fa-solid fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-stone-900 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-4">
+                <p>© 2026 WM Visuals Works | Will Muñoz. Todos los derechos reservados.</p>
+                <div class="flex gap-6">
+                    <a href="#inicio" class="hover:text-stone-300">Inicio</a>
+                    <a href="#noticias" class="hover:text-stone-300">Noticias</a>
+                    <a href="#acerca-de" class="hover:text-stone-300">Acerca de</a>
+                </div>
+            </div>
+
+      </div>
+    </footer>
+
+    <!-- QUESTION MODAL ("Haz tu pregunta" Pill CTA) -->
+    <div id="questionModal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-8 shadow-2xl relative border border-stone-200">
+            <button onclick="closeQuestionModal()" class="absolute top-6 right-6 text-stone-400 hover:text-black text-xl font-bold">
+                ✕
+            </button>
+            
+            <div class="space-y-4 mb-6">
+                <div class="w-10 h-10 rounded-full bg-brand-blue/10 text-brand-blue flex items-center justify-center text-lg">
+                    <i class="fa-solid fa-circle-question"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-stone-900">Haz tu pregunta</h3>
+                <p class="text-stone-500 text-xs leading-relaxed">
+                    Escribe tu consulta sobre proyectos, metodología de trabajo o capacitaciones académicas. Will Muñoz te responderá a la brevedad.
+                </p>
+            </div>
+
+            <form onsubmit="handleQuestionSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">Nombre</label>
+                    <input type="text" required placeholder="Ingresa tu nombre" class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-xs focus:outline-none focus:border-brand-blue">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">Correo Electrónico</label>
+                    <input type="email" required placeholder="tu@correo.com" class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-xs focus:outline-none focus:border-brand-blue">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">Pregunta o Consulta</label>
+                    <textarea rows="4" required placeholder="Escribe tu inquietud aquí..." class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-xs focus:outline-none focus:border-brand-blue"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-black hover:bg-stone-800 text-white font-bold text-xs py-3.5 rounded-full transition-all">
+                    Enviar Pregunta
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- DYNAMIC CATEGORY & ARTICLE MODAL -->
+    <div id="infoModal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-xl w-full p-8 shadow-2xl relative border border-stone-200 space-y-6">
+            <button onclick="closeInfoModal()" class="absolute top-6 right-6 text-stone-400 hover:text-black text-xl font-bold">
+                ✕
+            </button>
+            
+            <div id="modalImgContainer" class="hidden h-52 rounded-2xl overflow-hidden relative">
+                <img id="modalImage" src="" alt="" class="w-full h-full object-cover">
+            </div>
+
+            <div class="space-y-3">
+                <span id="modalBadge" class="inline-block px-3 py-1 rounded-full bg-stone-100 text-brand-blue text-[10px] font-bold uppercase tracking-wider">Categoría</span>
+                <h3 id="modalTitle" class="text-2xl font-bold text-stone-900">Título</h3>
+                <p id="modalDescription" class="text-stone-600 text-xs leading-relaxed">Descripción detallada...</p>
+            </div>
+
+            <div id="modalListContainer" class="hidden space-y-2 pt-2 border-t border-stone-100">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-stone-400">Proyectos / Temas Relacionados:</h4>
+                <ul id="modalList" class="space-y-1.5 text-xs text-stone-700 font-medium"></ul>
+            </div>
+
+            <div class="pt-4 flex justify-end">
+                <button onclick="closeInfoModal()" class="bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs font-bold px-6 py-2.5 rounded-full">
+                    Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- NOTIFICATION TOAST -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 hidden bg-black text-white text-xs px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-3 border border-stone-800">
+        <i class="fa-solid fa-circle-check text-brand-blue text-base"></i>
+        <span id="toastMessage">Acción realizada con éxito</span>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // 1. Mobile Menu Toggle Logic
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 2. Question Modal Functions
+        function openQuestionModal() {
+            document.getElementById('questionModal').classList.remove('hidden');
+        }
+
+        function closeQuestionModal() {
+            document.getElementById('questionModal').classList.add('hidden');
+        }
+
+        function handleQuestionSubmit(e) {
+            e.preventDefault();
+            closeQuestionModal();
+            showToast('¡Tu pregunta ha sido enviada! Te responderemos muy pronto.');
+            e.target.reset();
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            showToast('¡Gracias por tu mensaje! Will Muñoz se pondrá en contacto.');
+            e.target.reset();
+        }
+
+        // 3. Info/Category Modal Functions
+        function openCategoryDetails(title, description, items) {
+            document.getElementById('modalBadge').textContent = 'Información del Área';
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalDescription').textContent = description;
+
+            document.getElementById('modalImgContainer').classList.add('hidden');
+
+            const listContainer = document.getElementById('modalListContainer');
+            const list = document.getElementById('modalList');
+            list.innerHTML = '';
+
+            if (items && items.length > 0) {
+                items.forEach(item => {
+                    const li = document.createElement('li');
+                    li.className = 'flex items-center gap-2';
+                    li.innerHTML = `<i class="fa-solid fa-chevron-right text-[10px] text-brand-blue"></i> ${item}`;
+                    list.appendChild(li);
+                });
+                listContainer.classList.remove('hidden');
+            } else {
+                listContainer.classList.add('hidden');
+            }
+
+            document.getElementById('infoModal').classList.remove('hidden');
+        }
+
+        function openArticleModal(title, category, imgSrc, fullText) {
+            document.getElementById('modalBadge').textContent = category;
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalDescription').textContent = fullText;
+
+            const imgContainer = document.getElementById('modalImgContainer');
+            const img = document.getElementById('modalImage');
+            img.src = imgSrc;
+            imgContainer.classList.remove('hidden');
+
+            document.getElementById('modalListContainer').classList.add('hidden');
+            document.getElementById('infoModal').classList.remove('hidden');
+        }
+
+        function closeInfoModal() {
+            document.getElementById('infoModal').classList.add('hidden');
+        }
+
+        // Close modal when clicking on backdrop
+        window.onclick = function(e) {
+            const qModal = document.getElementById('questionModal');
+            const iModal = document.getElementById('infoModal');
+            if (e.target === qModal) closeQuestionModal();
+            if (e.target === iModal) closeInfoModal();
+        }
+
+        // 4. Toast Notification
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            toastMessage.textContent = msg;
+            toast.classList.remove('hidden');
+
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
